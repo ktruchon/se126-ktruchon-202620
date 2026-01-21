@@ -1,6 +1,6 @@
 #KT
 #Lab 1
-#1-6-2026
+#Due: 1-6-2026
 
 #PROGRAM PROMPT: ou will be writing one Python file for this project - it is a program that determines whether a meeting room is in violation of fire regulations regarding the maximum room capacity. The program will accept the maximum room capacity and the number of people attending the meeting. If the number of people is less than or equal to the maximum room capacity, the program announces that it is legal to hold the meeting and tells how many additional people may legally attend. If the number of people exceeds the maximum room capacity, the program announces that the meeting cannot be held as planned due to the fire regulation and tells how many people must be excluded in order to meet the fire regulations. The user should be allowed to enter and check as many rooms as they would like without exiting the program.
 
@@ -26,7 +26,7 @@ def decision(a):
 #---MAIN CODE--------------------------------
 
 #function call below - actually the function
-print(f"The difference is: {difference(22, 25)}")
+#print(f"The difference is: {difference(22, 25)}")
 
 print("\n\t\tWelcome to my Lab #1\n")
 
@@ -46,15 +46,17 @@ while answer == "y":
     #also display how many people can be added or removed (remember: if different returns a negative number, this is how many people should be removed) NOTE: all values related to people (adding/removing) should be displayed as positive values
 
     #if diff_return > 0: .... 
-
-
-
+    if diff_return > 0:
+        print(f"\n\tYour meeting scheduled in room {name} meets fire safety regulations!\nYou can safely add up to {diff_return} more people to your meeting. ")
+    elif diff_return < 0:
+        print(f"\n\tUnfortunately, your meeting scheduled in room {name} DOES NOT meet fire safety regulations!\nYou must remove at least {diff_return * -1} people to safely host your meeting. ")
+    else:
+        print(f"\n\tYour meeting scheduled in room {name} meets fire safety regulations!\nYou are currently at capacity so cannot add any more people to the meeting.")
 
     #ask the user if they have another number to check; pass the value to the decision() you wrote inPart 2 and continue the program based on that function’s return
     answer = input("\t\tWould you like to check another room? [y/n]: ").lower()
-
     answer = decision(answer)
 
 #Once the user is done checking meeting attendance, display a goodbye message
-
+print(f"\n\nThank you for using the Room Checking Program!\n\n")
 

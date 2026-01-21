@@ -40,6 +40,5 @@ with open("classLab2.csv") as csvfile:
             print(f"{name:20}   {max:5}   {ppl:5}   {remaining * -1:5}")
 print("-" * 50)
 #disconnect from file
-
 #display final values: total rooms counted, number of rooms over capacity
 print(f"\n\nROOMS OVER CAPACITY: {rooms_over}\nTOTAL ROOMS in FILE: {total_records}")
